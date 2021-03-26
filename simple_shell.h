@@ -5,5 +5,6 @@
 
 int printPrompt();
 char * readLine();
+char * trim();
 char ** tokenizeLine();
 int execute();

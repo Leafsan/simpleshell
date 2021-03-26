@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "simple_shell.h"
 
 char ** tokenizeLine(char *, char *);
+char * trimLeft(char*);
+char * trimRight(char*);
+char* trim(char*);
 
 char ** tokenizeLine(char * args, char * symbol) {
 	int bufsize = TOK_BUFSIZE, position = 0;
@@ -36,13 +40,33 @@ char ** tokenizeLine(char * args, char * symbol) {
 	
 	return tokens;
 }
+char* trimLeft(char* str) {
+	char* begin;
+	begin = str;
 
-/*void elimChr(char* str, char ch) {
-
-	for (; *str!='\0'; str++) {
-		if (*str == ch) {
-			strcpy(str, str + 1);
-			str--;
+	while (*begin != '\0') {
+		if (isspace(*begin))
+			begin++;
+		else {
+			str = begin;
+			break;
 		}
 	}
-}*/
+	return str;
+}
+char* trimRight(char* str) {
+	char t[64];
+	char * end;
+
+	strcpy(t, str);
+	end = t + strlen(t) -1;
+	while (end != t && isspace(*end))
+		end--;
+	*(end+1) = '\0';
+	str = t;
+
+	return str;
+}
+char* trim (char *str) {
+	return trimRight(trimLeft(str));
+}

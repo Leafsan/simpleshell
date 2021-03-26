@@ -4,7 +4,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <sys/wait.h>
-#include <ctype.h>
+//#include <ctype.h>
 #include "simple_shell.h"
 
 /* builtin function part */
@@ -38,15 +38,10 @@ int cmd_exit(char ** args) {
 int execute(char*);
 int launchBuiltin(char*, int, int, int, int);
 int executeCommand(char*, int, int, int, int);
-char* trimLeft(char*);
-char* trimRight(char*);
-char* trim(char*);
 
 int execute(char * args) {
 	char ** cmd_list;
 	int i, n = 0, isFirst= 1, input = 0, isBackground = 0;
-
-	printf("1234%s5678", trim(args));
 
 	if (strchr(args, '&')) {
 		isBackground = 1;
@@ -160,35 +155,4 @@ int executeCommand(char * arg, int input, int first, int last, int background) {
 	close(pipefd[1]);
 	
 	return (pipefd[0]);
-}
-char* trimLeft(char* str) {
-	char* begin;
-	begin = str;
-
-	while (*begin != '\0') {
-		if (isspace(*begin))
-			begin++;
-		else {
-			str = begin;
-			break;
-		}
-	}
-
-	return str;
-}
-char* trimRight(char* str) {
-	char t[64];
-	char *end;
-
-	strcpy(t, str);
-	end = t + strlen(t) - 1;
-	while (end != t && isspace(*end))
-		end--;
-	*(end + 1) = '\0';
-	str = t;
-
-	return str;
-}
-char* trim (char *str) {
-	return trimRight(trimLeft(str));
 }
