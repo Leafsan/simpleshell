@@ -1,0 +1,20 @@
+total 88
+drwxr-xr-x  3 cwk0906 cwk0906  4096  3ì›” 26 12:18 .
+drwxr-xr-x 19 cwk0906 cwk0906  4096  3ì›” 26 12:17 ..
+-rw-r--r--  1 cwk0906 cwk0906  1116  3ì›” 26 12:15 °ÿÿÿÿ
+-rw-r--r--  1 cwk0906 cwk0906  1059  3ì›” 26 12:05 °ÿÿÿÿÿÿÿ
+-rw-r--r--  1 cwk0906 cwk0906  3558  3ì›” 26 12:17 Executer.c
+-rw-r--r--  1 cwk0906 cwk0906  6824  3ì›” 26 12:17 Executer.o
+drwxr-xr-x  8 root    root     4096  3ì›” 26 11:56 .git
+-rw-r--r--  1 cwk0906 cwk0906   571  3ì›” 25 03:08 Makefile
+-rw-r--r--  1 cwk0906 cwk0906     0  3ì›” 26 12:18 out.txt
+-rw-r--r--  1 cwk0906 cwk0906   903  3ì›” 26 03:13 Parser.c
+-rw-r--r--  1 cwk0906 cwk0906  2248  3ì›” 26 12:17 Parser.o
+-rw-r--r--  1 cwk0906 cwk0906   407  3ì›” 23 17:10 PromptPrinter.c
+-rw-r--r--  1 cwk0906 cwk0906  1864  3ì›” 26 12:17 PromptPrinter.o
+-rwxr-xr-x  1 cwk0906 cwk0906 14344  3ì›” 26 12:17 simpleShell
+-rw-r--r--  1 cwk0906 cwk0906   598  3ì›” 26 03:51 simple_shell.c
+-rw-r--r--  1 cwk0906 cwk0906   272  3ì›” 26 03:14 simple_shell.h
+-rw-r--r--  1 cwk0906 cwk0906  1784  3ì›” 26 12:17 simple_shell.o
+-rw-r--r--  1 cwk0906 cwk0906   632  3ì›” 26 02:49 WordReader.c
+-rw-r--r--  1 cwk0906 cwk0906  2000  3ì›” 26 12:17 WordReader.o

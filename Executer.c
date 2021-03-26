@@ -38,11 +38,15 @@ int cmd_exit(char ** args) {
 int execute(char*);
 int launchBuiltin(char*, int, int, int, int);
 int executeCommand(char*, int, int, int, int);
+char* trimLeft(char*);
+char* trimRight(char*);
 char* trim(char*);
 
 int execute(char * args) {
 	char ** cmd_list;
 	int i, n = 0, isFirst= 1, input = 0, isBackground = 0;
+
+	printf("1234%s5678", trim(args));
 
 	if (strchr(args, '&')) {
 		isBackground = 1;
@@ -114,7 +118,7 @@ int executeCommand(char * arg, int input, int first, int last, int background) {
 		if (strstr(arg, "<")) {
 			redirection = tokenizeLine(arg, "<");
 
-			ret = strdup(trim(redirection[1]));
+			ret = trim(redirection[1]);
 
 			if ((fd_in = open(ret, O_RDONLY, 0)) < 0) {
 				fprintf(stderr, "ERROR: Failed to open %s for reading\n", redirection[1]);
@@ -126,7 +130,7 @@ int executeCommand(char * arg, int input, int first, int last, int background) {
 		else if (strstr(arg, ">")) {
 			redirection = tokenizeLine(arg, ">");
 
-			ret = strdup(trim(redirection[1]));
+			ret = trim(redirection[1]);
 			
 			if ((fd_out = creat(ret, 0644)) < 0) {
 				fprintf(stderr, "ERROR: Failed to open %s for writing\n", redirection[1]);
@@ -157,7 +161,7 @@ int executeCommand(char * arg, int input, int first, int last, int background) {
 	
 	return (pipefd[0]);
 }
-char* trim(char* str) {
+char* trimLeft(char* str) {
 	char* begin;
 	begin = str;
 
@@ -171,4 +175,20 @@ char* trim(char* str) {
 	}
 
 	return str;
+}
+char* trimRight(char* str) {
+	char t[64];
+	char *end;
+
+	strcpy(t, str);
+	end = t + strlen(t) - 1;
+	while (end != t && isspace(*end))
+		end--;
+	*(end + 1) = '\0';
+	str = t;
+
+	return str;
+}
+char* trim (char *str) {
+	return trimRight(trimLeft(str));
 }
