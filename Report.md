@@ -485,5 +485,31 @@ int execute();
 ```
 ---
 ## 컴파일
+
 <img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/%EC%BB%B4%ED%8C%8C%EC%9D%BC.png">
+컴파일 중에 자료형이 다르다는 이유로 오류가 나오지만 해당 부분이 큰 문제를 일으키지는 않고 있기에 무시했다.
+
 ## 실행 결과
+
+* 명령어 or 명령어 &
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/01.png">
+ls를 실행해본 결과이다. 제대로 동작하고 있다.
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/02.png">
+ls -al을 실행해본 결과 뒤에 추가 명령어도 잘 인식하고 동작한다.
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/03.png">
+sleep 5를 실행하면 프로세스가 끝날 때까지 대기하고 있는다.
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/04.png">
+sleep 1000 &로 실행한 결과 프로세스를 백그라운드로 실행하여 곧바로 프롬프트를 출력하게 된다.
+
+* 명령어 > 파일명 or 명령어 > 파일명 &
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/05.png">
+두 명령문을 실행한 후 리다이렉션을 이용해 파일로 출력한 후에 확인하였다. 두 명령 모두 잘 실행됨을 cat을 이용해서 확인할 수 있었다.
+
+* 명령어 < 파일명 or 명령어 < 파일명 &
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/06.png">
+두 명령문을 sort를 이용해서 위에서 출력했던 out.txt파일과 out2.txt 파일을 이용해서 실행시켰다. 큰 문제 없이 동작한다.
+
+* 명령어 | 명령어 or 명령어 | 명령어
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/07.png">
+
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/08.png">
