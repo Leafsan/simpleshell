@@ -510,6 +510,17 @@ sleep 1000 &로 실행한 결과 프로세스를 백그라운드로 실행하여
 두 명령문을 sort를 이용해서 위에서 출력했던 out.txt파일과 out2.txt 파일을 이용해서 실행시켰다. 큰 문제 없이 동작한다.
 
 * 명령어 | 명령어 or 명령어 | 명령어
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/06-1.png">
 <img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/07.png">
+ls -al | grep simple과 ls -al | grep simple &을 실행한 결과이다. 문제 없이 동작한다. 다만, 백그라운드 동작 경우에 프롬프트를 먼저 출력하는 문제는 존재한다.
 
+*  exit
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/09.png">
+exit를 실행한 후, 셸에서 빠져나와 터미널로 돌아오는 모습이다.
+
+*  복잡한 명령문
 <img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/08.png">
+복잡하고 여러 파이프라인으로 이루어진 명령문 역시 동작에 큰 문제 없이 시행된다.
+
+## 결론
+이전에 한번 만든 셸 이상으로 충분히 만족스러운 결과가 나왔다고 생각한다. 그러나 아직 built-in 프로그램을 실행했을 때 fork()가 실행되지 않는 점이나 일부 사소하지만 프롬프트가 우선적으로 출력되는 경우는 수정을 고려해봐야한다고 생각한다.
