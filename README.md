@@ -1,2 +1,2 @@
 # simpleshell
-for OS programming project
+This is for OS programming class project.
