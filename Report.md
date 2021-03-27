@@ -483,3 +483,7 @@ char * trim();
 char ** tokenizeLine();
 int execute();
 ```
+---
+## 컴파일
+<img src="https://raw.githubusercontent.com/Leafsan/simpleshell/master/reports/%EC%BB%B4%ED%8C%8C%EC%9D%BC.png">
+## 실행 결과
