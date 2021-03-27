@@ -10,7 +10,7 @@ int main(void) {
 	int should_run = 1; 	/* flag to determine when to exit program */
 
 	//Run command loop
-	while (should_run) {
+	while (should_run) {	/* actually i didn't used should_run */
 
 		printPrompt();		/* Function prints prompt with directory and name */
 		fflush(stdout);

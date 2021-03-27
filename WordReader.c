@@ -3,6 +3,9 @@
 #include <string.h>
 #include "simple_shell.h"
 
+/*
+ *	Function readLine get input chracters as strings
+ */
 char * readLine(void) {
 	int buffer_size = BUF_SIZE;	//set buffer size by BUF_SIZE at header file.
 	char * input = malloc(buffer_size * sizeof(char));	//allocate memory for words.

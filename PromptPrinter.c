@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include "simple_shell.h"
 
+/*
+ *	Function printPrompt prints prompt parts
+ */
 int printPrompt() {
 	char * buffer = malloc(PATH_LEN);	/* Dynamic memory allocation for buffer */
 	char * path = getcwd(buffer, PATH_LEN);	/* Get path of directory */
