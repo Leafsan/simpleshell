@@ -13,7 +13,7 @@ int main(void) {
 	while (should_run) {	/* actually i didn't used should_run */
 
 		printPrompt();		/* Function prints prompt with directory and name */
-		fflush(stdout);
+		fflush(stdout);		/* flush all buffer. if you don't flush stdout buffer, prompt may not be printed. */
 		
 		args = readLine();	/* Read command line arguments */
 		
